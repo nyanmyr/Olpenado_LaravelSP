@@ -10,11 +10,6 @@
 
 <h1>Welcome to the Student Portal</h1>
 
-<p>
-This system allows users to manage student information including
-adding, viewing, and editing student records.
-</p>
-
 <a href="{{ route('students.index') }}">
     Go to Student List
 </a>
