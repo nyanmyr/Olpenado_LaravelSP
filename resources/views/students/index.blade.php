@@ -18,25 +18,17 @@
         <th>Actions</th>
     </tr>
 
-    <tr>
-        <td>Juan Dela Cruz</td>
-        <td>BSIT</td>
-        <td>2nd Year</td>
-        <td>
-            <a href="{{ route('students.show') }}">View</a> |
-            <a href="{{ route('students.edit') }}">Edit</a>
-        </td>
-    </tr>
-
-    <tr>
-        <td>Maria Santos</td>
-        <td>BSCS</td>
-        <td>3rd Year</td>
-        <td>
-            <a href="{{ route('students.show') }}">View</a> |
-            <a href="{{ route('students.edit') }}">Edit</a>
-        </td>
-    </tr>
+    @foreach ($data as $student)
+        <tr>
+            <td>{{ $student->name }}</td>
+            <td>{{ $student->course }}</td>
+            <td>{{ $student->year_level }}</td>
+            <td>
+                <a href="{{ route('students.show', ['id' => $student->id]) }}">View</a> |
+                <a href="{{ route('students.edit', ['id' => $student->id]) }}">Edit</a>
+            </td>
+        </tr>
+    @endforeach
 
 </table>
 
